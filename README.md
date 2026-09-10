@@ -1,149 +1,245 @@
-# OSLabX — Virtual Operating System Laboratory & Resource Management Simulator
+# OS_Stimulator_For_Students
 
-> A web-based virtual Operating System laboratory that helps students **learn, simulate, visualize, experiment with, and understand Operating System concepts** through interactive simulations.
+> **A student-focused Virtual Operating System Laboratory designed to help learners easily understand how an Operating System actually works.**
 
 ## 📌 Project Overview
 
-**OSLabX** is an educational web application designed to make Operating System concepts easier to understand through practical, visual, and interactive experiments.
+**OS_Stimulator_For_Students** is a web-based educational platform created mainly for students who want to understand the **internal working of an Operating System through practical and visual simulations**.
 
-Traditional OS learning often depends on textbooks, static diagrams, classroom explanations, and manually calculated examples. These approaches can make topics such as CPU scheduling, synchronization, deadlocks, paging, memory allocation, file systems, and disk scheduling difficult to visualize.
+Operating Systems are often difficult to learn because many important concepts happen internally and cannot be directly seen. Students may understand definitions and formulas but still struggle to visualize what happens to a process, how the CPU selects a process, how memory is allocated, how pages are replaced, how deadlocks occur, how files are organized, or how a disk head moves.
 
-OSLabX addresses this gap by providing a virtual laboratory where students can enter experiment parameters, select an algorithm, run simulations, observe visualizations, inspect calculated results, and save their experiments for later review.
+This project aims to make those invisible OS operations **visible, interactive, and easy to understand**.
 
-The project combines an interactive React frontend with **Zoho Catalyst** backend services for authentication, APIs, persistence, user progress, experiment history, and result management.
+Instead of only reading theory, students can enter inputs, choose an algorithm, run a simulation, watch the OS behavior step by step, view the results, and understand why the result occurred.
 
-## 🎯 Objectives
+### 🎯 Main Focus
 
-- Make Operating System concepts practical and easier to understand.
-- Provide interactive simulations instead of only theoretical explanations.
-- Visualize algorithms using timelines, charts, tables, and step-by-step execution.
-- Allow students to experiment with different inputs and compare algorithms.
-- Provide a safe virtual Linux command laboratory without exposing the real system shell.
-- Save experiments and results for future reference.
-- Track student learning progress across OS laboratory modules.
-- Build a deployable, portfolio-ready academic project using modern web technologies.
+> **Help students easily understand HOW an Operating System actually works.**
 
-## ✨ Key Features
+The project focuses more on **learning and visualization** than simply producing numerical answers.
+
+## 🎓 Why This Project?
+
+Learning Operating Systems can be challenging when concepts are presented only through:
+
+- Textbooks
+- Static diagrams
+- Mathematical calculations
+- Theoretical explanations
+- Manually solved laboratory questions
+
+OS_Stimulator_For_Students provides a virtual environment where students can **experiment with OS concepts and see their behavior**.
+
+For example:
+
+**Instead of only learning:**
+
+> "Round Robin uses a time quantum."
+
+**Students can actually see:**
+
+```text
+Process P1 → CPU
+      ↓ Time Quantum Expires
+Process P2 → CPU
+      ↓ Time Quantum Expires
+Process P3 → CPU
+      ↓
+Process P1 → CPU again
+```
+
+This approach helps connect **OS theory → OS behavior → OS result**.
+
+## ✨ Core Learning Experience
+
+Every major laboratory experiment follows a simple workflow:
+
+```text
+Learn the Concept
+       ↓
+Enter Input
+       ↓
+Select Algorithm
+       ↓
+Run Simulation
+       ↓
+Watch What Happens
+       ↓
+View Results
+       ↓
+Understand the Reason
+       ↓
+Save the Experiment
+```
+
+The goal is to make each experiment understandable even for a student who is learning the topic for the first time.
+
+## 🚀 Major Modules
 
 ### 1. OS Fundamentals
-- Introduction to Operating Systems
-- OS services and system components
-- System calls and OS structures
-- Kernel and user-space concepts
-- Basic OS learning resources
+
+Learn the basic working and responsibilities of an Operating System.
+
+- What is an Operating System?
+- OS services
+- Kernel and user space
+- System calls
+- OS structures
+- Resource management
+- Basic OS concepts
 
 ### 2. Process Management
-- Process creation concepts
-- Process states
-- Process Control Block (PCB) visualization
-- Process state transitions
-- Context switching concepts
-- Process lifecycle simulation
 
-### 3. CPU Scheduling Simulator
-Interactive simulation of major scheduling algorithms:
+Understand what happens to a process during its lifetime.
+
+- Process creation
+- Process states
+- New → Ready → Running → Waiting → Terminated
+- Process Control Block (PCB)
+- Context switching
+- Process lifecycle visualization
+
+### 3. CPU Scheduling
+
+Understand how the Operating System decides **which process gets the CPU next**.
+
+Algorithms:
 
 - First Come First Serve (FCFS)
 - Shortest Job First (SJF)
 - Shortest Remaining Time First (SRTF)
 - Priority Scheduling
 - Round Robin
-- Preemptive and non-preemptive scheduling
 
-Expected outputs include:
+Students can observe:
 
 - Gantt Chart
-- Completion Time
-- Turnaround Time
-- Waiting Time
-- Response Time
-- Average Waiting Time
-- Average Turnaround Time
-- Algorithm comparison
+- CPU allocation
+- Process execution order
+- Waiting time
+- Turnaround time
+- Completion time
+- Response time
+- Average performance metrics
 
 ### 4. Threads
+
+Understand how multiple threads execute within a process.
+
 - Thread concepts
-- User-level and kernel-level thread concepts
 - Thread lifecycle
+- User-level threads
+- Kernel-level threads
 - Multithreading visualization
 
 ### 5. Process Synchronization
-- Critical section problem
-- Race condition demonstration
-- Mutex concepts
+
+Understand what happens when multiple processes or threads access shared resources.
+
+- Critical section
+- Race condition
+- Mutex
 - Semaphores
 - Producer–Consumer problem
 - Reader–Writer problem
-- Synchronization visualization
 
-### 6. Deadlock Laboratory
-- Deadlock conditions
+### 6. Deadlocks
+
+Understand **how and why processes become stuck waiting for resources**.
+
+- Four necessary conditions
 - Resource Allocation Graph
 - Deadlock detection
-- Deadlock avoidance concepts
+- Deadlock avoidance
 - Banker's Algorithm
-- Safe and unsafe state visualization
+- Safe state
+- Unsafe state
+
+Students can visually see how resource requests can lead to a deadlock.
 
 ### 7. Memory Management
-- Contiguous memory allocation
+
+Understand how the OS manages main memory and assigns memory to processes.
+
+- Memory allocation
 - First Fit
 - Best Fit
 - Worst Fit
-- Memory partition visualization
-- Fragmentation analysis
+- Partitions
+- Internal fragmentation
+- External fragmentation
 
 ### 8. Paging
-- Page and frame concepts
-- Page table visualization
-- Logical-to-physical address translation
-- Page allocation simulation
+
+Understand how logical memory is divided into pages and physical memory into frames.
+
+- Pages
+- Frames
+- Page tables
+- Address translation
+- Page allocation
+- Logical → Physical address mapping
 
 ### 9. Page Replacement
-Simulation and comparison of:
+
+Understand what happens when a required page is not available in memory.
+
+Algorithms:
 
 - FIFO
 - LRU
 - Optimal
 
-Results can include:
+Students can observe:
 
 - Page hits
 - Page faults
+- Page replacement sequence
 - Hit ratio
 - Fault ratio
-- Replacement sequence
 
 ### 10. File Systems
+
+Understand how an Operating System organizes and manages files.
+
 - File concepts
 - File attributes
 - File operations
-- Directory structures
-- File allocation methods
+- File organization
+- File allocation
 - Free-space management
 
 ### 11. Directory Structure
-Visual exploration of:
 
-- Single-level directories
-- Two-level directories
-- Tree-structured directories
-- Acyclic graph concepts
+Visualize how files and directories are organized.
+
+- Single-level directory
+- Two-level directory
+- Tree-structured directory
+- Acyclic graph directory
 
 ### 12. File Allocation
-Simulation of:
+
+Understand how files are physically allocated on storage.
 
 - Contiguous allocation
 - Linked allocation
 - Indexed allocation
 
 ### 13. Free Space Management
+
+Understand how the OS keeps track of unused storage blocks.
+
 - Bitmaps
 - Linked lists
 - Free-block tracking
-- Space utilization visualization
+- Space utilization
 
 ### 14. Mass Storage & Disk Scheduling
-Interactive disk scheduling simulations:
+
+Understand how the OS decides the order in which disk requests are serviced.
+
+Algorithms:
 
 - FCFS
 - SSTF
@@ -152,122 +248,143 @@ Interactive disk scheduling simulations:
 - LOOK
 - C-LOOK
 
-Outputs include:
+Students can visualize:
 
-- Disk head movement visualization
-- Total head movement
+- Disk requests
+- Disk head movement
 - Seek sequence
+- Total head movement
 - Algorithm comparison
 
 ### 15. Linux / Unix Command Laboratory
-A **safe virtual command laboratory** for practicing common Linux/Unix concepts.
 
-Examples include:
+A **safe virtual Linux laboratory** where students can practice common commands and understand their purpose.
 
-- `pwd`
-- `ls`
-- `cd`
-- `mkdir`
-- `touch`
-- `cat`
-- `cp`
-- `mv`
-- `rm`
-- `echo`
-- `whoami`
-- `clear`
+Examples:
 
-Commands are simulated inside the application rather than executed as unrestricted commands on the host operating system.
+```text
+pwd
+ls
+cd
+mkdir
+touch
+cat
+cp
+mv
+rm
+echo
+whoami
+clear
+```
+
+Commands are simulated inside the application. The laboratory will not provide unrestricted access to the real computer's shell.
 
 ### 16. Mobile Operating Systems
+
+Understand how Operating System concepts apply to mobile devices.
+
 - Mobile OS architecture
 - Android concepts
 - iOS concepts
 - Mobile resource management
-- Power and battery management
-- Mobile security concepts
+- Battery management
+- Mobile security
 
-### 17. Experiment History & Progress
-Students can:
+## 🧠 What Makes This Project Different?
 
-- Save experiments
-- View previous experiments
-- Review simulation results
-- Track completed modules
-- Monitor learning progress
-- Revisit previous inputs and results
+The main goal is not simply to create an **OS algorithm calculator**.
 
-## 🔄 Standard Experiment Workflow
+The project focuses on answering questions such as:
 
-Every major simulator follows a consistent learning workflow:
+- What is happening inside the OS?
+- Why did the OS choose this process?
+- What happens when a process is interrupted?
+- How does memory get allocated?
+- Why does a page fault occur?
+- Why does a deadlock happen?
+- How does the OS find free storage space?
+- Why does the disk head move in a particular order?
 
-```text
-Select Module
-     ↓
-Read Concept / Instructions
-     ↓
-Enter Experiment Input
-     ↓
-Select Algorithm
-     ↓
-Run Simulation
-     ↓
-Visualize Execution
-     ↓
-View Results & Metrics
-     ↓
-Compare / Analyze
-     ↓
-Save Experiment
-```
+Therefore, the application emphasizes:
 
-This common workflow keeps the application easy to learn and consistent across all OS laboratory modules.
+### 👀 Visualization
+
+Students can visually observe internal OS operations.
+
+### 🧪 Experimentation
+
+Students can change inputs and immediately see how behavior changes.
+
+### 📊 Comparison
+
+Different algorithms can be compared using the same input.
+
+### 💡 Explanation
+
+Results should be accompanied by understandable explanations wherever possible.
+
+### 💾 Experiment Saving
+
+Students can save experiments and revisit their results later.
 
 ## 🏗️ System Architecture
 
-OSLabX follows a **hybrid client-server architecture**.
+OS_Stimulator_For_Students follows a **hybrid client-server architecture**.
 
 ```text
-                         ┌─────────────────────────┐
-                         │        Student           │
-                         └────────────┬────────────┘
+                         ┌──────────────────────────┐
+                         │         STUDENT          │
+                         └────────────┬─────────────┘
                                       │
                                       ▼
-                         ┌─────────────────────────┐
+                         ┌──────────────────────────┐
                          │   React + Vite Frontend  │
-                         │   UI / Simulations /     │
-                         │   Visualizations         │
-                         └────────────┬────────────┘
-                                      │ REST APIs
-                                      ▼
-                         ┌─────────────────────────┐
-                         │      Zoho Catalyst       │
-                         │ Serverless Functions     │
-                         │ Authentication / APIs    │
-                         └────────────┬────────────┘
+                         │                          │
+                         │ • UI                     │
+                         │ • Simulations            │
+                         │ • Visualizations         │
+                         │ • Learning Modules       │
+                         └────────────┬─────────────┘
+                                      │
+                               REST API Requests
                                       │
                                       ▼
-                         ┌─────────────────────────┐
+                         ┌──────────────────────────┐
+                         │      Zoho Catalyst       │
+                         │                          │
+                         │ • Authentication         │
+                         │ • Serverless Functions   │
+                         │ • REST APIs              │
+                         │ • Validation             │
+                         └────────────┬─────────────┘
+                                      │
+                                      ▼
+                         ┌──────────────────────────┐
                          │   Catalyst Data Store    │
-                         │ Users / Experiments /    │
-                         │ Progress / Results      │
-                         └─────────────────────────┘
+                         │                          │
+                         │ • Users                  │
+                         │ • Experiments            │
+                         │ • Results                │
+                         │ • Progress               │
+                         └──────────────────────────┘
 ```
 
-### Why a Hybrid Architecture?
+### Client-Side Simulation
 
-OS algorithm simulations are primarily executed on the client side so that students receive fast, interactive visual feedback without unnecessary server requests.
+OS algorithms are primarily executed in the frontend so simulations can respond quickly and provide interactive visualizations.
 
-Zoho Catalyst is used for backend responsibilities such as:
+### Catalyst Backend
+
+Zoho Catalyst handles application services such as:
 
 - Authentication
 - User profiles
-- Experiment persistence
-- Saved results
+- Saving experiments
+- Loading experiments
 - Progress tracking
 - Experiment history
 - REST APIs
-- Server-side validation where required
+- Server-side validation
 
 ## 🧰 Technology Stack
 
@@ -275,18 +392,18 @@ Zoho Catalyst is used for backend responsibilities such as:
 |---|---|
 | Frontend | React |
 | Build Tool | Vite |
-| Language | JavaScript |
+| Programming Language | JavaScript |
 | Styling | CSS |
-| Charts & Visualization | Recharts |
+| Charts | Recharts |
 | Backend | Zoho Catalyst |
 | Backend Runtime | Node.js |
-| Backend Logic | Catalyst Serverless Functions |
+| Serverless Logic | Catalyst Functions |
 | API | REST APIs |
-| Database | Zoho Catalyst Data Store |
-| Authentication | Zoho Catalyst Authentication |
+| Database | Catalyst Data Store |
+| Authentication | Catalyst Authentication |
 | Version Control | Git |
 | Repository | GitHub |
-| Development Environment | VS Code |
+| IDE | Visual Studio Code |
 | Deployment | Zoho Catalyst |
 
 ## 📁 Planned Project Structure
@@ -327,45 +444,37 @@ OS_Stimulator_for_Students/
 └── package.json
 ```
 
-> This is the planned architecture. Files and folders will be added incrementally during development and tested before moving to the next phase.
+> The project will be developed incrementally. The architecture may be refined when implementation reveals practical requirements, while keeping the core technology stack simple.
 
-## 🧩 Core Architecture Principles
+## 🔄 Standard Simulator Design
 
-### Separation of UI and Algorithms
-
-Algorithm implementations are kept separate from React components. For example:
+Each major simulator is designed around the same learning pattern:
 
 ```text
-src/algorithms/scheduling/fcfs.js
-src/algorithms/scheduling/sjf.js
-src/algorithms/scheduling/roundRobin.js
+Input
+  ↓
+Algorithm Selection
+  ↓
+Simulation Engine
+  ↓
+Step-by-Step Execution
+  ↓
+Visualization
+  ↓
+Metrics / Results
+  ↓
+Explanation
+  ↓
+Save Experiment
 ```
 
-This makes algorithms easier to test, maintain, reuse, and compare.
-
-### Consistent Module Design
-
-Each simulator is designed around:
-
-```text
-Input → Algorithm → Simulation → Visualization → Results → Save
-```
-
-### Safe Linux Laboratory
-
-The Linux module is designed as a controlled educational simulator. It does not provide an unrestricted terminal capable of executing arbitrary host commands.
-
-### Progressive Development
-
-Each feature will be developed, tested, committed, and verified before moving to the next major feature.
+This consistent design makes it easier for students to learn different OS topics using the same interface pattern.
 
 ## 🗄️ Planned Data Model
 
-The application will use Zoho Catalyst Data Store for persistent application data.
-
 ### Users / Profiles
 
-Stores application-specific user information and learning profile data.
+Stores application-specific profile and learning information.
 
 ### Experiments
 
@@ -380,15 +489,13 @@ Stores saved experiment configurations such as:
 
 ### Results
 
-Stores calculated experiment results and relevant metrics.
+Stores calculated results and relevant simulation metrics.
 
 ### Progress
 
-Stores module completion and learning progress information.
+Stores module completion and learning progress.
 
 ## 🔌 Planned API Areas
-
-The backend API will be organized around major application responsibilities.
 
 ```text
 /api/users
@@ -398,62 +505,65 @@ The backend API will be organized around major application responsibilities.
 /api/results
 ```
 
-Typical operations will include creating, retrieving, updating, and deleting saved experiments where appropriate, along with retrieving and updating user progress.
-
-Exact Catalyst function implementation and API contracts will be finalized during the backend development phase.
+The exact API contracts and Catalyst implementation will be finalized during backend development.
 
 ## 🧪 Testing Strategy
 
-OSLabX follows a three-level testing approach.
+The project will use three levels of testing.
 
 ### Level 1 — Algorithm Testing
 
-Verify calculations independently using known test cases.
+Test OS algorithms independently using known test cases.
 
-Example:
+Examples:
 
 - FCFS waiting time
-- Round Robin time quantum handling
+- Round Robin scheduling
 - Page replacement fault count
+- Memory allocation
 - Disk head movement
-- Memory allocation results
 
 ### Level 2 — UI Testing
 
-Verify that:
+Verify:
 
-- Inputs work correctly.
-- Buttons perform expected actions.
-- Charts render correctly.
-- Results are displayed accurately.
-- Invalid inputs are handled properly.
+- Inputs
+- Buttons
+- Forms
+- Visualizations
+- Result tables
+- Validation messages
 
 ### Level 3 — Integration Testing
 
-Verify the complete workflow:
+Verify the complete application workflow:
 
 ```text
 Login
   ↓
-Open Module
+Open OS Module
   ↓
-Run Experiment
+Enter Experiment
+  ↓
+Run Simulation
+  ↓
+View Visualization
   ↓
 View Result
   ↓
 Save Experiment
   ↓
-Reload
+Reload Experiment
   ↓
-Verify Saved Data
+Verify Data
 ```
 
-A major feature should only be considered complete after its relevant tests pass.
+Each major feature should be tested before moving to the next development phase.
 
 ## 🚀 Development Roadmap
 
 - [x] Phase 1 — Planning & Architecture
-- [x] Phase 2 — GitHub Repository & Project Documentation Foundation
+- [x] Phase 2 — GitHub Repository & Documentation Foundation
 - [ ] Phase 3 — React + Vite Frontend Setup
 - [ ] Phase 4 — UI / Dashboard
 - [ ] Phase 5 — Zoho Catalyst Setup
@@ -472,11 +582,9 @@ A major feature should only be considered complete after its relevant tests pass
 - [ ] Phase 18 — Results & Progress Tracking
 - [ ] Phase 19 — Testing & Quality Assurance
 - [ ] Phase 20 — Zoho Catalyst Deployment
-- [ ] Phase 21 — Documentation & Final GitHub Release
+- [ ] Phase 21 — Documentation & Final Release
 
 ## 🌐 Deployment Plan
-
-The planned production deployment uses **Zoho Catalyst**.
 
 ```text
 Local Development
@@ -485,77 +593,77 @@ Git + GitHub
        ↓
 Catalyst Development Environment
        ↓
-Testing & Validation
+Testing
        ↓
 Catalyst Production Environment
        ↓
-Deployed OSLabX Application
+OS_Stimulator_For_Students
 ```
 
-## 📚 Educational Value
+## 🔐 Security & Safety
 
-OSLabX is intended to support practical learning of Operating Systems by connecting theory with experimentation.
-
-Students can change inputs, observe how algorithms behave, compare results, identify performance differences, and understand why an algorithm produces a particular result.
-
-The goal is not only to calculate an answer, but to **see the operating-system concept in action**.
-
-## 🎓 Academic Use
-
-OSLabX is being developed as an academic capstone / laboratory-oriented project focused on Operating Systems and practical software development.
-
-It is suitable for demonstrating:
-
-- Operating System concepts
-- Data structures and algorithms
-- Frontend development
-- Backend development
-- Database design
-- Authentication
-- API development
-- Data visualization
-- Software testing
-- Cloud deployment
-- Git and GitHub workflow
-
-## 🔐 Security & Safety Considerations
-
-- Authentication will be handled through the selected Catalyst authentication mechanism.
-- User-owned experiments should be isolated by authenticated user context.
+- Authentication will be handled using the selected Catalyst authentication mechanism.
+- User experiments should be isolated using authenticated user context.
 - Backend APIs will validate incoming requests where appropriate.
-- The Linux laboratory will use simulated commands instead of unrestricted host-shell execution.
-- Sensitive credentials and environment configuration will not be committed to GitHub.
+- Sensitive configuration and credentials will not be committed to GitHub.
+- The Linux laboratory will simulate commands instead of providing unrestricted host-shell execution.
+
+## 🎓 Educational Goal
+
+The central educational goal of **OS_Stimulator_For_Students** is to help students move from:
+
+```text
+              THEORY
+                 ↓
+        "I know the definition"
+                 ↓
+             SIMULATION
+                 ↓
+        "I can see what happens"
+                 ↓
+         EXPERIMENTATION
+                 ↓
+        "I can change the input"
+                 ↓
+          UNDERSTANDING
+                 ↓
+       "Now I understand WHY"
+```
+
+The project is intended to make Operating Systems **less theoretical, more visual, more interactive, and easier to understand**.
 
 ## 📌 Current Status
 
-**Project:** OSLabX — Virtual Operating System Laboratory & Resource Management Simulator  
+**Project Name:** OS_Stimulator_For_Students  
+**Project Type:** Virtual Operating System Laboratory & Resource Management Simulator  
+**Main Goal:** Help students easily understand how an Operating System actually works.  
 **Repository:** `Siva-2406/OS_Stimulator_for_Students`  
-**Current Stage:** Planning completed; project implementation will proceed incrementally.  
+**Current Stage:** Planning and documentation completed; implementation will proceed phase by phase.  
 **License:** Apache License 2.0
 
-## 🤝 Contribution & Development Workflow
+## 🤝 Development Workflow
 
-The project will use Git and GitHub for version control.
+The project will use Git and GitHub for collaborative development.
 
 Recommended commit style:
 
 ```text
 feat: add CPU scheduling simulator
-fix: correct round robin waiting time calculation
+fix: correct round robin calculation
 test: add scheduling algorithm test cases
-docs: update architecture documentation
-chore: configure frontend development environment
+docs: update OS module documentation
+chore: configure frontend environment
 ```
 
-Major work can be organized using feature branches and merged after testing.
+Major features can be developed through feature branches and merged after testing and review.
 
 ## 📄 License
 
-This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for the complete license text.
+This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for the complete license terms.
 
 ## 👨‍💻 Project
 
-**OSLabX**  
-Virtual Operating System Laboratory & Resource Management Simulator
+**OS_Stimulator_For_Students**  
+**Virtual Operating System Laboratory & Resource Management Simulator**
 
-Built as an academic project with a focus on practical Operating Systems education, interactive simulation, visualization, and cloud-based persistence.
+> **Learn the theory. Run the simulation. See what happens inside the OS. Understand why.**
