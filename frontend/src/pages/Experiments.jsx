@@ -1,0 +1,2 @@
+import { Link } from 'react-router-dom';
+export default function Experiments(){return <div className="page"><div className="page-intro"><span className="kicker">LAB NOTEBOOK</span><h2>Saved experiments</h2><p>Save simulations and revisit the inputs, results, and explanations later.</p></div><div className="empty-panel"><div className="empty-icon">✦</div><h3>Your experiment notebook is empty</h3><p>Run a simulator and save it here once experiment persistence is connected.</p><Link className="btn primary" to="/modules">Explore modules</Link></div></div>}
