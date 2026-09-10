@@ -1,0 +1,9 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight, Play, Layers, Clock3, Target, CheckCircle2 } from 'lucide-react';
+import { modules } from '../data/modules';
+import ModuleCard from '../components/ModuleCard';
+
+export default function Dashboard(){return <div className="page"><section className="hero"><div><span className="kicker">WELCOME TO YOUR VIRTUAL OS LAB</span><h2>See <em>how the OS works</em>, not just what it is.</h2><p>Learn Operating Systems through interactive simulations. Enter an experiment, run the algorithm, watch each step, and understand the reason behind the result.</p><div className="hero-actions"><Link className="btn primary" to="/modules"><Play size={17}/> Start learning <ArrowRight size={16}/></Link><Link className="btn secondary" to="/progress">View progress</Link></div></div><div className="hero-visual"><div className="orbit orbit-a"/><div className="orbit orbit-b"/><div className="core"><Layers size={34}/><span>OS</span></div><div className="float-card fc1">CPU <b>Running</b></div><div className="float-card fc2">Memory <b>72%</b></div><div className="float-card fc3">Process <b>P3 → CPU</b></div></div></section>
+<section className="stats"><Stat icon={Layers} value="16" label="Learning modules"/><Stat icon={Clock3} value="24/7" label="Virtual laboratory"/><Stat icon={Target} value="∞" label="Experiments"/><Stat icon={CheckCircle2} value="0" label="Completed today"/></section>
+<section className="section-head"><div><span className="kicker">EXPLORE</span><h3>OS learning modules</h3></div><Link to="/modules" className="text-link">View all <ArrowRight size={16}/></Link></section><div className="module-grid">{modules.slice(0,8).map(m=><ModuleCard key={m.id} module={m}/>)}</div></div>}
+function Stat({icon:Icon,value,label}){return <div className="stat"><Icon size={20}/><strong>{value}</strong><span>{label}</span></div>}
