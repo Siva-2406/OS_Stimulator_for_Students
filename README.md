@@ -564,7 +564,7 @@ Each major feature should be tested before moving to the next development phase.
 
 - [x] Phase 1 — Planning & Architecture
 - [x] Phase 2 — GitHub Repository & Documentation Foundation
-- [ ] Phase 3 — React + Vite Frontend Setup
+- [x] Phase 3 — React + Vite Frontend Setup
 - [ ] Phase 4 — UI / Dashboard
 - [ ] Phase 5 — Zoho Catalyst Setup
 - [ ] Phase 6 — Database Design
@@ -638,7 +638,7 @@ The project is intended to make Operating Systems **less theoretical, more visua
 **Project Type:** Virtual Operating System Laboratory & Resource Management Simulator  
 **Main Goal:** Help students easily understand how an Operating System actually works.  
 **Repository:** `Siva-2406/OS_Stimulator_for_Students`  
-**Current Stage:** Planning and documentation completed; implementation will proceed phase by phase.  
+**Current Stage:** Frontend foundation completed; local verification is pending before backend and simulator expansion.  
 **License:** Apache License 2.0
 
 ## 🤝 Development Workflow
@@ -667,3 +667,8 @@ This project is licensed under the **Apache License 2.0**. See the [LICENSE](LIC
 **Virtual Operating System Laboratory & Resource Management Simulator**
 
 > **Learn the theory. Run the simulation. See what happens inside the OS. Understand why.**
+
+
+## Phase 3 Frontend
+
+The initial frontend provides a responsive learning dashboard, module catalogue, simulator workspace, local experiment notebook, progress tracking, module search/filtering, and a CPU scheduling engine for FCFS, SJF, Priority, and Round Robin. Browser localStorage is used temporarily for experiments until Zoho Catalyst persistence is implemented.
